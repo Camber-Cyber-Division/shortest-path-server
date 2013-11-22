@@ -24,7 +24,10 @@ Instructions
 7. Add the build steps to the *Build Instructions* section.
  * Your solution will need to build and run on a x86\_64 system running Debian
    Stable GNU/Linux.
-8. Submit a link to your completed solution as well as any questions to
+8. Bonus Points: Like you, we are pedantic nerds. Please let us know if you
+   find anything during this process or in our instructions that could use
+   improvement.
+9. Submit a link to your completed solution as well as any questions to
    <jcook@camber.com>.
 
 
@@ -75,29 +78,29 @@ Input Format
 Sample Input Data
 -----------------
 
-    # Decimal Representation of Binary File
-    1  5   9
-    1  2  14
-    1  3   9
-    1  4   7
-    2  5   9
-    3  2   2
-    3  6  11
-    4  3  10
-    4  6  15
-    6  5   6
+     # Decimal Representation of Binary File
+     1  5   9
+     1  2  14
+     1  3   9
+     1  4   7
+     2  5   9
+     3  2   2
+     3  6  11
+     4  3  10
+     4  6  15
+     6  5   6
 
-    # Hexadecimal Representation of Binary File
-    0100 0500 0900
-    0100 0200 0e00
-    0100 0300 0900
-    0100 0400 0700
-    0200 0500 0900
-    0300 0200 0200
-    0300 0600 0b00
-    0400 0300 0a00
-    0400 0600 0f00
-    0600 0500 0600
+     # Hexadecimal Representation of Binary File
+     0100 0500 0900
+     0100 0200 0e00
+     0100 0300 0900
+     0100 0400 0700
+     0200 0500 0900
+     0300 0200 0200
+     0300 0600 0b00
+     0400 0300 0a00
+     0400 0600 0f00
+     0600 0500 0600
 
 
 Output Format
@@ -113,11 +116,11 @@ Output Format
 Sample Output Data
 ------------------
 
-    # Correct output for sample input data above
-    1->3->2->5 (20)
+     # Correct output for sample input data above
+     1->3->2->5 (20)
 
-    # Correct output for map with no path from start (1) to destination (2)
-    No path from '1' to '2'
+     # Correct output for map with no path from start (1) to destination (2)
+     No path from '1' to '2'
 
 
 Testing Instructions
@@ -125,7 +128,9 @@ Testing Instructions
 
 There are several `map#.bin` files in the data directory of this project. The
 data can be sent to your listening server with the following command (via a
-shell in Linux): `cat map1.bin | netcat 127.0.0.1 7777`
+shell in Linux):
+
+     cat map1.bin | netcat 127.0.0.1 7777
 
 License
 -------

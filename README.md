@@ -107,10 +107,13 @@ Output Format
 -------------
 
 * The output will written to the client file descriptor as a string in the
-  following format: `start_vertex->vertex->destination_vertex (distance)`
+  following format:
+
+          start_vertex->vertex->destination_vertex (distance)
 * If there is no path from the starting vertex to the destination vertex the
-  result should be in the follow format: `No path from 'start_vertex' to
-  'destination_vertex'`
+  result should be in the follow format:
+
+          No path from 'start_vertex' to 'destination_vertex'
 
 
 Sample Output Data

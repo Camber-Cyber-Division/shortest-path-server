@@ -24,7 +24,7 @@ Instructions
 7. Add the build steps to the *Build Instructions* section.
  * Your solution will need to build and run on a x86\_64 system running Debian
    Stable GNU/Linux.
-8. Submit your completed solution as well as any questions to
+8. Submit a link to your completed solution as well as any questions to
    <jcook@camber.com>.
 
 

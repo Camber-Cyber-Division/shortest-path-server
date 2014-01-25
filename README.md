@@ -111,7 +111,7 @@ Output Format
 
           start_vertex->vertex->destination_vertex (distance)
 * If there is no path from the starting vertex to the destination vertex the
-  result should be in the follow format:
+  result should be in the following format:
 
           No path from 'start_vertex' to 'destination_vertex'
 

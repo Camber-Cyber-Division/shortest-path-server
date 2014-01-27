@@ -54,6 +54,8 @@ Requirements
   descriptor in the format specified under the Input section and write the
   shortest path and distance out over the client file descriptor in the format
   specified under the Output section
+ * The input format is guaranteed, and therefore, undefined behaviour for
+   invalid input is acceptable
 
 
 Input Format
@@ -129,11 +131,17 @@ Sample Output Data
 Testing Instructions
 --------------------
 
-There are several `map#.bin` files in the data directory of this project. The
-data can be sent to your listening server with the following command (via a
-shell in Linux):
+There are several `map#.bin` files in the data directory of this project. Each
+of these files conforms with the format defined in the Input section. Your
+server should be able to handle and solve each one in series. The data can be
+sent to your listening server with the following command (via a shell in
+Linux):
 
-     cat map1.bin | netcat 127.0.0.1 7777
+     time for i in `ls -1 *.bin`
+     do
+         echo $(cat $i | netcat 127.0.0.1 7777) \
+         >> /tmp/shortest-path-output.txt
+     done
 
 License
 -------

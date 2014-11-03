@@ -48,6 +48,9 @@ Requirements
 * The application will take a directed acyclic graph, a starting vertex, and a
   destination vertex and calculate the shortest path from the start to the
   destination
+ * The graph will have a single designated entry point
+ * The graph will have a single desigated terminal point
+ * The graph may contain disjoint subgraphs
 * The application will listen and accept connections on TCP 127.0.0.1:7777
 * Upon establishing a connection with a client the application will read the
   starting vertex, destination vertex, and graph from the client file
@@ -63,19 +66,20 @@ Input Format
 
 * The binary input data's endianness is little-endian. If you are developing on
   an x86 system, you do not have to worry about this.
-* The binary input data is split into two byte fields
+* The binary input data is split into two-byte fields
 * Each field is a sixteen bit unsigned integer in the set: {1,2,...,65535}
  * Zero is an invalid input; it can be assumed that no field will be set to 0
 * There are no delimiters between the fields
-* The first and second byte represent a starting vertex
-* The third and forth byte represent a destination vertex
-* The fifth and sixth byte represent the number of edges that follow
-* Each edge is directed
-* Each edge is split into three fields
- * The first field is a vertex and predecessor to the next field
- * The second field a vertex and the successor to the previous field
- * The third field is the cost to travel from the predecessor to the successor
-
+* The first and second bytes of the file represent the entry vertex of the graph
+* The third and forth bytes of the file represent the terminal vertex of the graph
+* The fifth and sixth bytes represent the number of edges
+* The remainder of the file is as described below:
+  * Each field is 6 bytes wide and represents a single edge
+  * Each edge is directed
+  * Each edge field is split into three sub-fields
+   * The first two-byte field is the ID of the source vertex of the edge
+   * The second two-byte field a ID of the destination vertex of the edge
+   * The third two-byte field is the cost to traverse the edge
 
 Sample Input Data
 -----------------
@@ -148,7 +152,7 @@ License
 
 This file is part of Shortest-Path-Server.
 
-Copyright (c) 2013 __your-name-here__
+Copyright (c) __current-year__ __your-name-here__
 
 Shortest-Path-Server is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published by the Free
